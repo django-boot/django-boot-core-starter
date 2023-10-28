@@ -1,2 +1,4 @@
-# django-boot-core-starter
-Django Boot Starter - Core
+# Django Boot Core - Starter
+
+Core starter library for Django Boot.
+
