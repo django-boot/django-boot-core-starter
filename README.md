@@ -20,7 +20,7 @@ INSTALLED_APPS = [
 Then assure you have these two settings in your `settings.py`:
 
 ```python
-RHAZES_PACKAGES = []  # beans you want to be scanned in your project
+DI_PACKAGES = []  # beans you want to be scanned in your project
 
 DJANGO_BOOT = {
     "APPLICATION_CONFIGURATION": {
