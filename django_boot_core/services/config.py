@@ -38,7 +38,7 @@ class DjangoBootConfiguration:
         return self.application_configuration.get("RECURSE", False)
 
     def get_application_configuration_force_envvars_uppercase(self):
-        return self.application_configuration.get("FORCE_ENVVARS_UPPERCASE", True)
+        return self.application_configuration.get("FORCE_ENVVARS_UPPERCASE", False)
 
     def get_application_configuration_envvar_prefix(self):
         return self.application_configuration.get("ENVVAR_PREFIX")

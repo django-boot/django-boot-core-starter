@@ -3,3 +3,4 @@ include README.md
 recursive-include django_boot_core
 exclude runtests.py
 prune tests/
+prune application_config/
