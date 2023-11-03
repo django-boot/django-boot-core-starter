@@ -1,5 +1,11 @@
 # Django Boot Core - Starter
 
+[![PyPI - Version](https://img.shields.io/pypi/v/django-boot-core-starter?style=flat-square)](https://pypi.org/project/django-boot-core-starter)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/django-boot/django-boot-core-starter/project-code-standards.yml?style=flat-square)](https://github.com/django-boot/django-boot-core-starter/actions/workflows/project-code-standards.yml)
+[![GitHub issues](https://img.shields.io/github/issues/django-boot/django-boot-core-starter?style=flat-square)](https://github.com/django-boot/django-boot-core-starter/issues)
+![Static Badge](https://img.shields.io/badge/Status-Under%20Development-yellow?style=flat-square&cacheSeconds=120)
+
+
 Core starter library for Django Boot.
 
 This library will initialize [Rhazes](https://github.com/django-boot/Rhazes) `ApplicationContext` by default and registers some beans on it.
