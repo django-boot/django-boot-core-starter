@@ -26,9 +26,9 @@ INSTALLED_APPS = [
 Then assure you have these two settings in your `settings.py`:
 
 ```python
-DI_PACKAGES = []  # beans you want to be scanned in your project
-
 DJANGO_BOOT = {
+    "DI_PACKAGES": [],  # packages containing beans which you want to be scanned in your project
+    "DI_SCAN_STARTERS": False,
     "APPLICATION_CONFIGURATION": {
         ... # Configuration for ApplicationConfiguration. Read below
     }
@@ -66,3 +66,21 @@ DJANGO_BOOT = {
 ```
 
 Default configuration location (directory) (in case `BASE_DIR` is set in `settings.py`) would be `{BASE_DIR}/application_config`.
+
+
+### Write your own starter apps
+
+You can make Django Boot scan your apps by default without having to add anything specific in settings `DI_PACKAGES` by ending your app names in `_starter`.
+
+To enable this feature you need to specify `DJANGO_BOOT["DI_SCAN_STARTERS"] = True` in settings.
+
+```python
+DJANGO_BOOT = {
+    "DI_SCAN_STARTERS": True,
+    # other configurations here
+}
+```
+
+**Example:** you have an app called `polls` and it requires some beans to be registered into `ApplicationContext`. You can rename the app to `polls_starter` instead and this library will automatically pick it to scan.
+
+Alternatively (perhaps for performance reasons as well) you can skip this and just let other developers know that which packages then need to add to settings `DI_PACKAGES` after they install your app.

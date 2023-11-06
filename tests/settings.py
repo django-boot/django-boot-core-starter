@@ -11,9 +11,13 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS = ["django_boot_core"]
+INSTALLED_APPS = ["django_boot_core", "tests.polls_starter"]
 
-DJANGO_BOOT = {"APPLICATION_CONFIGURATION": {"TYPE_ESTIMATE": False}}
+DJANGO_BOOT = {
+    "DI_PACKAGES": ["tests.services"],
+    "DI_SCAN_STARTERS": True,
+    "APPLICATION_CONFIGURATION": {"TYPE_ESTIMATE": False},
+}
 
 MIDDLEWARE = []
 

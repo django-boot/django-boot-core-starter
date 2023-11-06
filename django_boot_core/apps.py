@@ -12,8 +12,15 @@ class DjangoBootCoreConfig(AppConfig):
 
     def ready(self):
         to_scan = ["django_boot_core.services"]
-        if hasattr(settings, "DI_PACKAGES") and type(settings.DI_PACKAGES) == list:
-            to_scan += settings.DI_PACKAGES
+        if hasattr(settings, "DJANGO_BOOT"):
+            DI_PACKAGES = settings.DJANGO_BOOT.get("DI_PACKAGES", [])
+            to_scan += DI_PACKAGES
+
+            if settings.DJANGO_BOOT.get("DI_SCAN_STARTERS", False):
+                for app in settings.INSTALLED_APPS:
+                    if app.endswith("_starter"):
+                        to_scan.append(app)
+
         t1 = time.time()
         ApplicationContext.initialize(to_scan)
         duration = time.time() - t1
